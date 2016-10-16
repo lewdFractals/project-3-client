@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Project Three Placeholder Name!</title>
-
+      <title>Project Three Placeholder Name</title>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1></h1>
-
-      <p></p>
+      <h1>Project 3</h1>
+      <div id="message"></div>
+      <!-- Sign Up -->
+      <form id="sign-up">
+        <fieldset>
+          <div class="form-group">
+            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirm">
+          </div>
+          <button type="submit" class="btn btn-primary pull-right" name="submit">Sign Up</button>
+        </fieldset>
+      </form>
+      <!-- Sign In -->
+      <form class="form-inline" id="sign-in">
+        <fieldset>
+          <div class="form-group">
+            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary" name="submit">Log in</button>
+        </fieldset>
+      </form>
+      <!-- Change Password -->
+      <form id="change-password">
+        <fieldset>
+          <div class="form-group">
+            <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+          </div>
+          <button type="submit" class="btn btn-primary pull-right" name="submit">Change Password</button>
+        </fieldset>
+      </form>
+      <!-- Log Off -->
+      <form id="sign-out">
+        <button type="submit"  name="submit">Sign out</button>
+      </form>
     </body>
 </html>
