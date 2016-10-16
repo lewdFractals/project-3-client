@@ -16,7 +16,7 @@ const onCreatePage = function (event) {
 const onIndexPages = function (event) {
   event.preventDefault();
   api.indexPages()
-    .done(ui.success)
+    .done(ui.indexPagesSuccess)
     .fail(ui.failure);
 };
 
