@@ -1,6 +1,6 @@
 'use strict';
 
-// const app = require('../app');
+const indexBlogsTemplate = require('../templates/blogs-listing.handlebars');
 
 const createBlogSuccess = (data) => {
   console.log("Blog successfully created!", data);
@@ -8,6 +8,10 @@ const createBlogSuccess = (data) => {
 
 const createBlogFail = (data) => {
   console.log("Blog creation failed!", data);
+};
+
+const indexBlogsSuccess = (blogs) => {
+  $('.content-display').html(indexBlogsTemplate(blogs));
 };
 
 const success = (data) => {
@@ -22,6 +26,7 @@ const failure = (data) => {
 module.exports = {
   createBlogSuccess,
   createBlogFail,
+  indexBlogsSuccess,
   success,
-  failure
+  failure,
 };

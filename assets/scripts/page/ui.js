@@ -1,6 +1,6 @@
 'use strict';
 
-// const app = require('../app');
+const indexPagesTemplate = require('../templates/pages-listing.handlebars');
 
 const createPageSuccess = (data) => {
   console.log("Page successfully created!", data);
@@ -8,6 +8,10 @@ const createPageSuccess = (data) => {
 
 const createPageFail = (data) => {
   console.log("Page creation failed!", data);
+};
+
+const indexPagesSuccess = (pages) => {
+  $('.content-display').html(indexPagesTemplate(pages));
 };
 
 const success = (data) => {
@@ -22,6 +26,7 @@ const failure = (data) => {
 module.exports = {
   createPageSuccess,
   createPageFail,
+  indexPagesSuccess,
   success,
   failure
 };

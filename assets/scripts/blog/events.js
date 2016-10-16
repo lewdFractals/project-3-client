@@ -16,7 +16,7 @@ const onCreateBlog = function (event) {
 const onIndexBlogs = function (event) {
   event.preventDefault();
   api.indexBlogs()
-    .done(ui.success)
+    .done(ui.indexBlogsSuccess)
     .fail(ui.failure);
 };
 
