@@ -1,159 +1,185 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Project Three Placeholder Name</title>
+      <title>TypeWriter</title>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Project 3</h1>
-      <div id="message"></div>
-      <!-- Sign Up -->
-      <form id="sign-up">
-        <fieldset>
-          <div class="form-group">
-            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirm">
-          </div>
-          <button type="submit" class="btn btn-primary pull-right" name="submit">Sign Up</button>
-        </fieldset>
-      </form>
-      <!-- Sign In -->
-      <form class="form-inline" id="sign-in">
-        <fieldset>
-          <div class="form-group">
-            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-primary" name="submit">Log in</button>
-        </fieldset>
-      </form>
-      <!-- Change Password -->
-      <form id="change-password">
-        <fieldset>
-          <div class="form-group">
-            <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
-          </div>
-          <button type="submit" class="btn btn-primary pull-right" name="submit">Change Password</button>
-        </fieldset>
-      </form>
-      <!-- Log Off -->
-      <form id="sign-out">
-        <button type="submit"  name="submit">Sign out</button>
-      </form>
 
-      <!-- Create Blog -->
-      <form id="create-blog">
-        <fieldset>
-          <div class="form-group">
-            <input type="text" class="form-control" name="blog[title]" placeholder="Blog Post Title">
+      <div class="nav-wrapper">
+        <nav>
+          <div class="auth-nav">
+            <a class="log-in-link" role="button" href="#">Log In</a>
+            <a class="sign-up-link" role="button" href="#">Sign Up</a>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="blog[content]" placeholder="Blog Post Content">
+
+          <div class="user-nav">
+            <a class="log-out" role="button" href="#">Log Out</a>
+            <a class="change-password-link" role="button" href="#">Account</a>
           </div>
-          <button type="submit" class="btn btn-primary pull-right" name="submit">Post</button>
-        </fieldset>
-      </form>
+        </nav>
 
-      <!-- Index Blogs -->
-    <form id="index-blogs">
-       <button type="submit" name="submit" class="btn btn-default">Show All Blog Posts</button>
-    </form>
-
-    <!-- Show Blog -->
-    <form id="show-blog">
-      <input type="text" name="blog[_id]" placeholder="Blog ID">
-      <button type="submit" name="submit" class="btn btn-default">Show Blog Post</button>
-    </form>
-
-    <!-- Edit Blog -->
-    <form id="edit-blog">
-      <fieldset>
-        <input type="text" name="blog[_id]" placeholder="Blog ID">
-        <div class="form-group">
-          <input type="text" class="form-control" name="blog[title]" placeholder="Edit Blog Post Title">
+        <div class="pwd-form">
+          <form id="change-password" class="change-password">
+            <div>
+              <label for="passwords[old]">Current password</label>
+              <input name="passwords[old]" id="passwords[old]" type="password" placeholder="Current password">
+            </div>
+            <div>
+              <label for="passwords[new]">New password</label>
+              <input name="passwords[new]" id="passwords[new]" type="password" placeholder="New password">
+            </div>
+            <button type="submit">Change Password</button>
+          </form>
         </div>
-        <div class="form-group">
-          <input type="text" class="form-control" name="blog[content]" placeholder="Edit Your Blog Post">
+      </div>
+
+      <h1>TypeWriter</h1>
+      <h4>Write your own story.</h4>
+      <div id="message" class="messages"></div>
+
+      <div class="auth-forms">
+          <form id="sign-up" class="sign-up">
+            <div>
+              <label for="credentials[email]">Email</label>
+              <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
+            </div>
+
+            <div>
+              <label for="credentials[password]">Password</label>
+              <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
+            </div>
+
+            <div>
+              <label for="credentials[password_confirmation]">Confirm password</label>
+              <input name="credentials[password_confirmation]" id="credentials[password_confirmation]" type="password" placeholder="Confirm password" required>
+            </div>
+
+            <button type="submit">Sign Up</button>
+          </form>
+
+          <form id="log-in" class="log-in">
+            <div>
+              <label for="credentials[email]">Email</label>
+              <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
+            </div>
+            <div>
+              <label for="credentials[password]">Password</label>
+              <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Log In</button>
+          </form>
         </div>
-        <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
-      </fieldset>
-    </form>
 
-    <!-- Delete Blog -->
-    <form id="delete-blog">
-      <input type="text" name="blog[_id]" placeholder="Blog ID">
-      <button type="submit" name="submit" class="btn btn-default">Delete Blog Post</button>
-    </form>
+      <div class="container blogs-and-pages">
+        <div class="blog">
+          <!-- Create Blog -->
+          <form id="create-blog">
+            <fieldset>
+              <div class="form-group">
+                <input type="text" class="form-control" name="blog[title]" placeholder="Blog Post Title">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="blog[content]" placeholder="Blog Post Content">
+              </div>
+              <button type="submit" class="btn btn-primary pull-right" name="submit">Post</button>
+            </fieldset>
+          </form>
 
-    <!-- Create Page -->
-     <form id="create-page">
-       <fieldset>
-         <div class="form-group">
-           <input type="text" class="form-control" name="page[header]" placeholder="Page Header">
-         </div>
-         <div class="form-group">
-           <input type="text" class="form-control" name="page[content]" placeholder="Page Content">
-         </div>
-         <div class="form-group">
-           <input type="text" class="form-control" name="page[sidebar]" placeholder="Page Sidebar">
-         </div>
-         <div class="form-group">
-           <input type="text" class="form-control" name="page[footer]" placeholder="Page Footer">
-         </div>
-         <button type="submit" class="btn btn-primary pull-right" name="submit">Post</button>
-       </fieldset>
-     </form>
+          <!-- Index Blogs -->
+          <form id="index-blogs">
+             <button type="submit" name="submit" class="btn btn-default">Show All Blog Posts</button>
+          </form>
 
-     <!-- Index Pages -->
-   <form id="index-pages">
-      <button type="submit" name="submit" class="btn btn-default">Show All Pages</button>
-   </form>
+          <!-- Show Blog -->
+          <form id="show-blog">
+            <input type="text" name="blog[_id]" placeholder="Blog ID">
+            <button type="submit" name="submit" class="btn btn-default">Show Blog Post</button>
+          </form>
 
-   <!-- Show Page -->
-   <form id="show-page">
-     <input type="text" name="page[_id]" placeholder="Page ID">
-     <button type="submit" name="submit" class="btn btn-default">Show Page</button>
-   </form>
+          <!-- Edit Blog -->
+          <form id="edit-blog">
+            <fieldset>
+              <input type="text" name="blog[_id]" placeholder="Blog ID">
+              <div class="form-group">
+                <input type="text" class="form-control" name="blog[title]" placeholder="Edit Blog Post Title">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="blog[content]" placeholder="Edit Your Blog Post">
+              </div>
+              <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
+            </fieldset>
+          </form>
 
-   <!-- Edit Page -->
-   <form id="edit-page">
-     <fieldset>
-       <input type="text" name="page[_id]" placeholder="Page ID">
-       <div class="form-group">
-         <input type="text" class="form-control" name="page[header]" placeholder="Page Header">
+          <!-- Delete Blog -->
+          <form id="delete-blog">
+            <input type="text" name="blog[_id]" placeholder="Blog ID">
+            <button type="submit" name="submit" class="btn btn-default">Delete Blog Post</button>
+          </form>
+        </div>
+
+        <div class="page">
+          <!-- Create Page -->
+          <form id="create-page">
+            <fieldset>
+              <div class="form-group">
+                <input type="text" class="form-control" name="page[header]" placeholder="Page Header">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="page[content]" placeholder="Page Content">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="page[sidebar]" placeholder="Page Sidebar">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="page[footer]" placeholder="Page Footer">
+              </div>
+              <button type="submit" class="btn btn-primary pull-right" name="submit">Post</button>
+            </fieldset>
+          </form>
+
+          <!-- Index Pages -->
+          <form id="index-pages">
+              <button type="submit" name="submit" class="btn btn-default">Show All Pages</button>
+           </form>
+
+          <!-- Show Page -->
+          <form id="show-page">
+             <input type="text" name="page[_id]" placeholder="Page ID">
+             <button type="submit" name="submit" class="btn btn-default">Show Page</button>
+           </form>
+
+          <!-- Edit Page -->
+          <form id="edit-page">
+             <fieldset>
+               <input type="text" name="page[_id]" placeholder="Page ID">
+               <div class="form-group">
+                 <input type="text" class="form-control" name="page[header]" placeholder="Page Header">
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" name="page[content]" placeholder="Page Content">
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" name="page[sidebar]" placeholder="Page Sidebar">
+               </div>
+               <div class="form-group">
+                 <input type="text" class="form-control" name="page[footer]" placeholder="Page Footer">
+               </div>
+               <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
+             </fieldset>
+           </form>
+
+         <!-- Delete Page -->
+         <form id="delete-page">
+           <input type="text" name="page[_id]" placeholder="Page ID">
+           <button type="submit" name="submit" class="btn btn-default">Delete Page</button>
+         </form>
        </div>
-       <div class="form-group">
-         <input type="text" class="form-control" name="page[content]" placeholder="Page Content">
-       </div>
-       <div class="form-group">
-         <input type="text" class="form-control" name="page[sidebar]" placeholder="Page Sidebar">
-       </div>
-       <div class="form-group">
-         <input type="text" class="form-control" name="page[footer]" placeholder="Page Footer">
-       </div>
-       <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
-     </fieldset>
-   </form>
 
-   <!-- Delete Page -->
-   <form id="delete-page">
-     <input type="text" name="page[_id]" placeholder="Page ID">
-     <button type="submit" name="submit" class="btn btn-default">Delete Page</button>
-   </form>
-
-   <!-- Display Content -->
-  <div class="content-display"></div>
+         <!-- Display Content -->
+         <div class="content-display"></div>
+       </div>
 
 
     </body>
