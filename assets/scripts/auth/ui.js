@@ -2,38 +2,97 @@
 
 const app = require('../app');
 
-const signUpSuccess = (data) => {
-  console.log(data);
+const hideContainer = () => {
+  $('.container').hide();
 };
-const signInSuccess = (data) => {
-  console.log(data);
-  app.user = data.user;
-};
-const signFailure = (error) => {
-  document.getElementById("message").innerHTML = 'Sorry! Please try again';
-  $('#message').fadeIn('fast').delay(5000).fadeOut('fast');
-  console.log(error);
-};
-const signOutSuccess = (data) => {
-  console.log(data);
-  app.user = null;
-};
-const changePasswordSuccess = (data) => {
-  document.getElementById("message").innerHTML = 'Password successfully changed';
-  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
-  console.log(data);
-};
-const failure = (error) => {
-  document.getElementById("message").innerHTML = 'Error: ' + error.statusText;
-  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
-    console.log(error);
 
+const showContainer = () => {
+  $('.container').show();
 };
+
+$(window).load(function(){
+  hideContainer();
+});
+
+const clearForm = (formId) => {
+  document.getElementById(formId).reset();
+};
+
+const toggleAuth = () => {
+  $('.auth-nav').toggle();
+  $('.auth-forms').toggle();
+  $('.user-nav').toggle();
+};
+
+const toggleAuthOptions = () => {
+  $('.sign-up-link').toggleClass('hidden');
+  $('.log-in-link').toggleClass('block');
+  $('#log-in').toggle('fast');
+  $('#sign-up').toggle('fast');
+};
+
+const toggleChangePassword = () => {
+  $('.pwd-form').slideToggle();
+};
+
+// const logInFailure = () => {
+//   messageFade('.messages div', 'logInFail');
+// };
+//
+// const logOutFailure = () => {
+//   messageFade('.messages div', 'logOutFail');
+// };
+//
+// const passwordChangeFailure = () => {
+//   messageFade('.messages div', 'passwordChangeFail');
+// };
+//
+// const signUpFailure = () => {
+//   messageFade('.messages div', 'signUpFail');
+// };
+
+const success = (data) => {
+  console.log(data);
+};
+
+const failure = (error) => {
+  console.error(error);
+};
+
+const logInSuccess = (data) => {
+  app.user = data.user;
+  toggleAuth();
+  showContainer();
+  clearForm('#sign-up');
+  clearForm('#log-in');
+};
+
+const logOutSuccess = () => {
+  app.user = null;
+  toggleAuth();
+  hideContainer();
+  clearForm('change-password');
+  $('.pwd-form').hide();
+  $('.sign-up-link').removeClass('hidden');
+  $('.log-in-link').addClass('hidden');
+  $('#log-in').show();
+  $('#sign-up').hide();
+};
+
+
 module.exports = {
+  clearForm,
+  toggleAuth,
+  toggleAuthOptions,
+  toggleChangePassword,
+  // logInFailure,
+  // logOutFailure,
+  // passwordChangeFailure,
+  // signUpFailure,
+  logInSuccess,
+  logOutSuccess,
   failure,
-  signUpSuccess,
-  signInSuccess,
-  changePasswordSuccess,
-  signOutSuccess,
-  signFailure
+  success,
+  hideContainer,
+  showContainer
 };

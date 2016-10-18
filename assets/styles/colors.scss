@@ -1,0 +1,30 @@
+// basic colors
+$white: #fff;
+$black: #000;
+
+// transparent colors
+$transparent-black: rgba($black, .5);
+
+// neutrals
+$darkgray: #222e25;
+$lightgray: #97948a;
+$tan: #f7f7be;
+$white: #fafafa;
+
+// main color palette
+$slate: #626d71;
+$ceramic: #cdcdc0;
+$latte: #ddbc95;
+$coffee: #b38867;
+
+@function shade($color, $percentage) {
+  @return mix($black, $color, $percentage);
+}
+
+@function tint($color, $percentage) {
+  @return mix($white, $color, $percentage);
+}
+
+
+$light-latte: tint($latte, 50%);
+$coffee-shade: shade($coffee, 20%);
