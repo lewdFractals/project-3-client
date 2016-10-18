@@ -61,19 +61,6 @@ button {
     }
 }
 
-.btn-primary {
-  align-self: left;
-  background: $latte;
-  display: block;
-  text-decoration: none;
-
-  &:hover {
-    background-color: $coffee;
-    color: $white;
-    text-decoration: none;
-    }
-}
-
 nav {
   background: $ceramic;
   top: 0;
