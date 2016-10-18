@@ -18,7 +18,7 @@ const createBlog = (data) => {
 const indexBlogs = () => {
   let token = app.user.token;
   return $.ajax({
-    url: app.host + '/blogs',
+    url: app.host + '/myblogs',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + token,
