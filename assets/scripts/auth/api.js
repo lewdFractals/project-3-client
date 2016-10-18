@@ -25,7 +25,7 @@ const logIn = (data) => {
 // ajax request to let a signed-in user change his/her password
 const changePassword = (data) => {
   let request = $.ajax({
-    url: app.host + '/change-password/' + app.user.id,
+    url: app.host + '/change-password/' + app.user._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -38,7 +38,7 @@ const changePassword = (data) => {
 // ajax request to let a signed-in user sign out
 const logOut = () => {
   let request = $.ajax({
-    url: app.host + '/sign-out/' + app.user.id,
+    url: app.host + '/sign-out/' + app.user._id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token,
