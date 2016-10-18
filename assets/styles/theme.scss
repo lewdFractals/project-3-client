@@ -47,6 +47,33 @@ button {
   // padding: $link-padding;
 }
 
+.btn-default {
+  align-self: left;
+  background: $latte;
+  display: block;
+  margin: 5px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $coffee;
+    color: $white;
+    text-decoration: none;
+    }
+}
+
+.btn-primary {
+  align-self: left;
+  background: $latte;
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $coffee;
+    color: $white;
+    text-decoration: none;
+    }
+}
+
 nav {
   background: $ceramic;
   top: 0;
@@ -92,7 +119,7 @@ nav {
 
 form {
   margin: 0 auto;
-  width: 225px;
+  width: auto;
 }
 
 input {
@@ -109,10 +136,11 @@ label {
 }
 
 button {
+  background-color: $latte;
   border: 0;
   box-shadow: none;
   height: $form-element-height;
-  width: 100%;
+  width: 200px;
 }
 
 #log-in button {
