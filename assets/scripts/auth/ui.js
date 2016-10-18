@@ -14,8 +14,8 @@ $(window).load(function(){
   hideContainer();
 });
 
-const clearForm = (formId) => {
-  document.getElementById(formId).reset();
+const clearForm = () => {
+  $('input').val('');
 };
 
 const toggleAuth = () => {
@@ -63,18 +63,16 @@ const logInSuccess = (data) => {
   app.user = data.user;
   toggleAuth();
   showContainer();
-  clearForm('#sign-up');
-  clearForm('#log-in');
+  clearForm();
 };
 
 const logOutSuccess = () => {
   app.user = null;
   toggleAuth();
   hideContainer();
-  clearForm('change-password');
   $('.pwd-form').hide();
   $('.sign-up-link').removeClass('hidden');
-  $('.log-in-link').addClass('hidden');
+  $('.log-in-link').removeClass('hidden');
   $('#log-in').show();
   $('#sign-up').hide();
 };

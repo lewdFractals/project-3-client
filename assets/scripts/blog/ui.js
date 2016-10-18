@@ -2,8 +2,13 @@
 
 const indexBlogsTemplate = require('../templates/blogs-listing.handlebars');
 
+const clearForm = () => {
+  $('input').val('');
+};
+
 const createBlogSuccess = (data) => {
   console.log("Blog successfully created!", data);
+  clearForm();
 };
 
 const createBlogFail = (data) => {
@@ -16,6 +21,7 @@ const indexBlogsSuccess = (blogs) => {
 
 const success = (data) => {
   console.log("SUCCESS!", data);
+  clearForm();
 };
 
 const failure = (data) => {
