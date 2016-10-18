@@ -1,9 +1,33 @@
 <h2> Blog Posts </h2>
+<h5>By: {{_owner.email}}</h3>
+<h5>Date: {{updatedAt}}</h5>
 {{#blogs}}
   <h4>
     {{title}}
   </h4>
-  <p>
-    {{content}}
-  </p>
+  {{content}}
+
+  <!-- Update Blog -->
+  <div id="edit-form">
+   <form id="edit-blog">
+     <fieldset>
+       <input type="hidden" name="blog[_id]" value="{{_id}}">
+       <div class="form-group">
+         <input type="text" class="form-control" name="blog[title]" placeholder="Edit Blog Post Title">
+       </div>
+       <div class="form-group">
+         <input type="text" class="form-control" name="blog[content]" placeholder="Edit Your Blog Post">
+       </div>
+       <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
+     </fieldset>
+   </form>
+   </div>
+
+ <!-- Delete Blog -->
+ <div id="delete-form">
+  <form id="delete-blog">
+    <input type="hidden" name="blog[_id]" value="{{_id}}">
+    <button type="submit" name="submit" class="btn btn-default">Delete Blog Post</button>
+  </form>
+</div>
 {{/blogs}}

@@ -17,6 +17,7 @@ const createBlogFail = (data) => {
 
 const indexBlogsSuccess = (blogs) => {
   $('.content-display').html(indexBlogsTemplate(blogs));
+  console.log(blogs);
 };
 
 const success = (data) => {
