@@ -28,6 +28,7 @@ const onShowBlog = function (event) {
     .fail(ui.failure);
 };
 
+
 const onEditBlog = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -49,8 +50,11 @@ const addHandlers = () => {
   $('#create-blog').on('submit', onCreateBlog);
   $('#index-blogs').on('submit', onIndexBlogs);
   $('#show-blog').on('submit', onShowBlog);
-  $('#edit-blog').on('submit', onEditBlog);
-  $('#delete-blog').on('submit', onDeleteBlog);
+  // $('#edit-blog').on('submit', onEditBlog);
+  // $('#delete-blog').on('submit', onDeleteBlog);
+
+  $('.content-display').on('submit','#edit-blog', onEditBlog);
+  $('.content-display').on('submit','#delete-blog', onDeleteBlog);
 };
 
 module.exports = {
