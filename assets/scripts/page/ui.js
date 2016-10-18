@@ -2,8 +2,13 @@
 
 const indexPagesTemplate = require('../templates/pages-listing.handlebars');
 
+const clearForm = () => {
+  $('input').val('');
+};
+
 const createPageSuccess = (data) => {
   console.log("Page successfully created!", data);
+  clearForm();
 };
 
 const createPageFail = (data) => {
@@ -16,6 +21,7 @@ const indexPagesSuccess = (pages) => {
 
 const success = (data) => {
   console.log("SUCCESS!", data);
+  clearForm();
 };
 
 const failure = (data) => {

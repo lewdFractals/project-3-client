@@ -70,7 +70,6 @@ const logOutSuccess = () => {
   app.user = null;
   toggleAuth();
   hideContainer();
-  clearForm('change-password');
   $('.pwd-form').hide();
   $('.sign-up-link').removeClass('hidden');
   $('.log-in-link').removeClass('hidden');
