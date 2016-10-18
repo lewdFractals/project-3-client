@@ -63,6 +63,8 @@ const logInSuccess = (data) => {
   app.user = data.user;
   toggleAuth();
   showContainer();
+  $('#public-index-blogs').hide();
+  $('.public-display').empty().hide();
   clearForm();
 };
 
@@ -75,6 +77,8 @@ const logOutSuccess = () => {
   $('.log-in-link').removeClass('hidden');
   $('#log-in').show();
   $('#sign-up').hide();
+  $('#public-index-blogs').show();
+  $('.public-display').show();
 };
 
 

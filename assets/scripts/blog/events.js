@@ -5,6 +5,13 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
+const onPublicIndexBlogs = function (event) {
+  event.preventDefault();
+  api.publicIndexBlogs()
+    .done(ui.publicIndexBlogsSuccess)
+    .fail(ui.failure);
+};
+
 const onCreateBlog = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -47,6 +54,7 @@ const onDeleteBlog = function (event) {
 
 
 const addHandlers = () => {
+  $('#public-index-blogs').on('submit', onPublicIndexBlogs);
   $('#create-blog').on('submit', onCreateBlog);
   $('#index-blogs').on('submit', onIndexBlogs);
   $('#show-blog').on('submit', onShowBlog);
