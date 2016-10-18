@@ -45,49 +45,59 @@
       <h4>Write your own story.</h4>
       <div id="message" class="messages"></div>
 
+      <!-- Public Blog Index -->
+      <form id="public-index-blogs">
+        <span>Dont have an account?</span>
+        <button type="submit" name="submit" class="btn btn-default">View Some Blog Posts</button>
+      </form>
+      <br>
+
       <div class="auth-forms">
-          <form id="sign-up" class="sign-up">
-            <div>
-              <label for="credentials[email]">Email</label>
-              <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
-            </div>
+        <form id="sign-up" class="sign-up">
+          <div>
+            <label for="credentials[email]">Email</label>
+            <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
+          </div>
 
-            <div>
-              <label for="credentials[password]">Password</label>
-              <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
-            </div>
+          <div>
+            <label for="credentials[password]">Password</label>
+            <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
+          </div>
 
-            <div>
-              <label for="credentials[password_confirmation]">Confirm password</label>
-              <input name="credentials[password_confirmation]" id="credentials[password_confirmation]" type="password" placeholder="Confirm password" required>
-            </div>
+          <div>
+            <label for="credentials[password_confirmation]">Confirm password</label>
+            <input name="credentials[password_confirmation]" id="credentials[password_confirmation]" type="password" placeholder="Confirm password" required>
+          </div>
 
-            <button type="submit">Sign Up</button>
-          </form>
+          <button type="submit">Sign Up</button>
+        </form>
 
-          <form id="log-in" class="log-in">
-            <div>
-              <label for="credentials[email]">Email</label>
-              <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
-            </div>
-            <div>
-              <label for="credentials[password]">Password</label>
-              <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
-            </div>
-            <button type="submit">Log In</button>
-          </form>
-        </div>
+        <form id="log-in" class="log-in">
+          <div>
+            <label for="credentials[email]">Email</label>
+            <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
+          </div>
+          <div>
+            <label for="credentials[password]">Password</label>
+            <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
+          </div>
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+
+      <!-- Display Public Blog Index -->
+      <div class="public-display"></div>
 
       <div class="container blogs-and-pages">
         <div class="blog">
           <!-- Create Blog modal button-->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-blog-modal">
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#create-blog-modal">
             Create blog post
           </button>
 
           <!-- Index Blogs -->
           <form id="index-blogs">
-             <button type="submit" name="submit" class="btn btn-default">Show All Blog Posts</button>
+             <button type="submit" name="submit" class="btn btn-default">Show My Blog</button>
           </form>
 
           <!-- Show Blog -->
@@ -119,13 +129,13 @@
 
         <div class="page">
           <!-- Create Page -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-page-modal">
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#create-page-modal">
             Create new page
           </button>
 
           <!-- Index Pages -->
           <form id="index-pages">
-              <button type="submit" name="submit" class="btn btn-default">Show All Pages</button>
+              <button type="submit" name="submit" class="btn btn-default">Show My Pages</button>
            </form>
 
           <!-- Show Page -->

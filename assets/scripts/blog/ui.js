@@ -1,6 +1,7 @@
 'use strict';
 
 const indexBlogsTemplate = require('../templates/blogs-listing.handlebars');
+const publicIndexBlogsTemplate = require('../templates/public-blogs-listing.handlebars');
 
 const clearForm = () => {
   $('input').val('');
@@ -13,6 +14,11 @@ const createBlogSuccess = (data) => {
 
 const createBlogFail = (data) => {
   console.log("Blog creation failed!", data);
+};
+
+const publicIndexBlogsSuccess = (blogs) => {
+  $('.public-display').html(publicIndexBlogsTemplate(blogs));
+  console.log(blogs);
 };
 
 const indexBlogsSuccess = (blogs) => {
@@ -33,6 +39,7 @@ const failure = (data) => {
 module.exports = {
   createBlogSuccess,
   createBlogFail,
+  publicIndexBlogsSuccess,
   indexBlogsSuccess,
   success,
   failure,

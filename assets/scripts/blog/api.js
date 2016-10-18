@@ -15,6 +15,13 @@ const createBlog = (data) => {
   });
 };
 
+const publicIndexBlogs = () => {
+  return $.ajax({
+    url: app.host + '/blogs',
+    method: 'GET',
+  });
+};
+
 const indexBlogs = () => {
   let token = app.user.token;
   return $.ajax({
@@ -66,6 +73,7 @@ const deleteBlog = (data) => {
 
 module.exports = {
   createBlog,
+  publicIndexBlogs,
   indexBlogs,
   showBlog,
   editBlog,
