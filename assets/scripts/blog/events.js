@@ -40,7 +40,10 @@ const onEditBlog = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.editBlog(data)
-    .done(ui.success)
+    .done( function(){
+      ui.success();
+      onIndexBlogs(event);
+    })
     .fail(ui.failure);
 };
 
@@ -48,7 +51,10 @@ const onDeleteBlog = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.deleteBlog(data)
-    .done(ui.success)
+    .done(function(){
+      ui.success();
+      onIndexBlogs(event);
+    })
     .fail(ui.failure);
 };
 
