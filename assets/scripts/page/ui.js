@@ -1,6 +1,7 @@
 'use strict';
 
 const indexPagesTemplate = require('../templates/pages-listing.handlebars');
+const showPageTemplate = require('../templates/show-page.handlebars');
 
 const clearForm = () => {
   $('input').val('');
@@ -19,6 +20,10 @@ const indexPagesSuccess = (pages) => {
   $('.content-display').html(indexPagesTemplate(pages));
 };
 
+const showPageSuccess = (page) => {
+  $('.content-display').html(showPageTemplate(page));
+};
+
 const success = (data) => {
   console.log("SUCCESS!", data);
   clearForm();
@@ -33,6 +38,7 @@ module.exports = {
   createPageSuccess,
   createPageFail,
   indexPagesSuccess,
+  showPageSuccess,
   success,
   failure
 };

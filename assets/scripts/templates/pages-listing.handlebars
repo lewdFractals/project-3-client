@@ -6,10 +6,30 @@
   <p>
     {{content}}
   </p>
-  <p>
-    {{sidebar}}
-  </p>
-  <p>
-    {{footer}}
-  </p>
+
+  <!-- Show Page -->
+  <form id="show-page">
+     <input type="hidden" name="page[_id]" value="{{_id}}">
+     <button type="submit" name="submit" class="btn btn-default">Show Page</button>
+   </form>
+
+  <!-- Edit Page -->
+  <form id="edit-page">
+     <fieldset>
+       <input type="hidden" name="page[_id]" value="{{_id}}">
+       <div class="form-group">
+         <input type="text" class="form-control" name="page[header]" placeholder="Page Header">
+       </div>
+       <div class="form-group">
+         <textarea class="form-control text-editor" name="page[content]" placeholder="Page Content" rows="10" cols=75> </textarea>
+       </div>
+       <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
+     </fieldset>
+   </form>
+
+ <!-- Delete Page -->
+ <form id="delete-page">
+   <input type="hidden" name="page[_id]" value="{{_id}}">
+   <button type="submit" name="submit" class="btn btn-default">Delete Page</button>
+ </form>
 {{/pages}}
