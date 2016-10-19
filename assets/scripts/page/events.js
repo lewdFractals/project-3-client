@@ -32,7 +32,10 @@ const onEditPage = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.editPage(data)
-    .done(ui.success)
+    .done(function(){
+      ui.success();
+      onIndexPages(event);
+    })
     .fail(ui.failure);
 };
 
@@ -40,7 +43,10 @@ const onDeletePage = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.deletePage(data)
-    .done(ui.success)
+    .done(function(){
+      ui.success();
+      onIndexPages(event);
+    })
     .fail(ui.failure);
 };
 
