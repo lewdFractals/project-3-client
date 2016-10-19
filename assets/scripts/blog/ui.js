@@ -9,6 +9,7 @@ const clearForm = () => {
 
 const createBlogSuccess = (data) => {
   console.log("Blog successfully created!", data);
+  $('#create-blog-modal').modal('hide');
   clearForm();
 };
 

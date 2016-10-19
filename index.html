@@ -170,66 +170,60 @@
        </div>
 
        <!-- Create Blog post modal -->
-       <div class="modal fade" id="create-blog-modal" tabindex="-1" role="dialog" aria-labelledby="create-blog-modal" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-           <div class="modal-content">
-             <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-               </button>
-               <h4 class="modal-title" id="create-blog-modal-header">Create blog post</h4>
-             </div>
-             <div class="modal-body">
-               <!-- Create Blog post modal body-->
-               <form id="create-blog">
-                 <fieldset>
-                   <div class="form-group">
-                     <input type="text" class="form-control" name="blog[title]" placeholder="Blog Post Title">
-                   </div>
-                   <div class="form-group">
-                     <textarea class="form-control text-editor" id="blog-entry" name="blog[content]" placeholder="New Blog Post" rows="10" cols=75> </textarea>
-                   </div>
-                   <button type="submit" class="btn btn-default pull-right" name="submit">Create post</button>
-                 </fieldset>
-               </form>
-              </div>
-             <div class="modal-footer">
-               <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
-             </div>
-           </div>
-         </div>
-       </div>
-
-       <!-- Create new page modal -->
-       <div class="modal fade" id="create-page-modal" tabindex="-1" role="dialog" aria-labelledby="create-page-modal" aria-hidden="true">
+      <div class="modal fade" id="create-blog-modal" tabindex="-1" role="dialog" aria-labelledby="create-blog-modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="create-page-modal-header">Create new page</h4>
+              <h4 class="modal-title" id="create-blog-modal-header">Create blog post</h4>
             </div>
             <div class="modal-body">
-              <!-- Create new page modal body-->
-              <form id="create-page">
+              <!-- Create Blog post modal body-->
+              <form id="create-blog">
                 <fieldset>
                   <div class="form-group">
-                    <input type="text" class="form-control" name="page[header]" placeholder="Page Header">
+                    <input type="text" class="form-control" name="blog[author]" placeholder="author: required">
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control text-editor" name="page[content]" placeholder="Page Content" rows="10" cols=75> </textarea>
+                    <input type="text" class="form-control" name="blog[title]" placeholder="title: required">
                   </div>
-                  <button type="submit" class="btn btn-default pull-right" name="submit">Create page</button>
+                  <div class="form-group">
+                    <textarea class="form-control text-editor" id="blog-entry" name="blog[content]" rows="10" cols="75"> </textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary pull-right" name="submit">Create page</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </fieldset>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
-            </div>
+             </div>
           </div>
         </div>
       </div>
+
+      <!-- Create new page modal -->
+      <div class="modal fade" id="create-page-modal" tabindex="-1" role="dialog" aria-labelledby="create-page-modal" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+               <span aria-hidden="true">&times;</span>
+             <h4 class="modal-title" id="create-page-modal-header">page content</h4>
+           </div>
+           <div class="modal-body">
+             <!-- Create new page modal body-->
+             <form id="create-page">
+               <fieldset>
+                 <div class="form-group">
+                   <input type="text" class="form-control" name="page[header]" placeholder="title: required">
+                 </div>
+                 <div class="form-group">
+                   <textarea class="form-control text-editor" name="page[content]" rows="10" cols="75"> </textarea>
+                 </div>
+                 <button type="submit" class="btn btn-primary pull-right" name="submit">Create page</button>
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </fieldset>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
 
     </body>
 </html>

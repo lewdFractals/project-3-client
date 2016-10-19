@@ -9,6 +9,7 @@ const clearForm = () => {
 
 const createPageSuccess = (data) => {
   console.log("Page successfully created!", data);
+  $('#create-page-modal').modal('hide');
   clearForm();
 };
 
