@@ -12,19 +12,21 @@ const onToggleChangePassword = () => {
   ui.toggleChangePassword();
 };
 
-const onSignUp = function (event) {
-  event.preventDefault();
-  let data = getFormFields(event.target);
-  api.signUp(data)
-    .done(ui.success)
-    .fail(ui.failure);
-};
-
 const onLogIn = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.logIn(data)
     .done(ui.logInSuccess)
+    .fail(ui.failure);
+};
+
+const onSignUp = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signUp(data)
+    .done(function(){
+      onLogIn(event, data);
+    })
     .fail(ui.failure);
 };
 
