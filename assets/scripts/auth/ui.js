@@ -2,6 +2,10 @@
 
 const app = require('../app');
 
+const displayMessage = () => {
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
+};
+
 const hideContainer = () => {
   $('.container').hide();
 };
@@ -35,28 +39,18 @@ const toggleChangePassword = () => {
   $('.pwd-form').slideToggle();
 };
 
-// const logInFailure = () => {
-//   messageFade('.messages div', 'logInFail');
-// };
-//
-// const logOutFailure = () => {
-//   messageFade('.messages div', 'logOutFail');
-// };
-//
-// const passwordChangeFailure = () => {
-//   messageFade('.messages div', 'passwordChangeFail');
-// };
-//
-// const signUpFailure = () => {
-//   messageFade('.messages div', 'signUpFail');
-// };
-
 const success = (data) => {
   console.log(data);
 };
 
 const failure = (error) => {
   console.error(error);
+};
+
+const passwordChangeSuccess = () => {
+  document.getElementById("message").innerHTML = 'Password successfully changed!';
+  displayMessage();
+  toggleChangePassword();
 };
 
 const logInSuccess = (data) => {
@@ -81,17 +75,19 @@ const logOutSuccess = () => {
   $('.public-display').show();
 };
 
+const logInFailure = () => {
+  document.getElementById("message").innerHTML = 'Password or e-mail is incorrect. Please try again.';
+  displayMessage();
+};
 
 module.exports = {
   clearForm,
   toggleAuth,
   toggleAuthOptions,
   toggleChangePassword,
-  // logInFailure,
-  // logOutFailure,
-  // passwordChangeFailure,
-  // signUpFailure,
+  passwordChangeSuccess,
   logInSuccess,
+  logInFailure,
   logOutSuccess,
   failure,
   success,
