@@ -7,14 +7,20 @@ const clearForm = () => {
   $('input').val('');
 };
 
-const createPageSuccess = (data) => {
-  console.log("Page successfully created!", data);
+const displayMessage = () => {
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
+};
+
+const createPageSuccess = () => {
+  document.getElementById("message").innerHTML = 'Page successfully created!';
+  displayMessage();
   $('#create-page-modal').modal('hide');
   clearForm();
 };
 
-const createPageFail = (data) => {
-  console.log("Page creation failed!", data);
+const createPageFail = () => {
+  document.getElementById("message").innerHTML = 'You failed to put text in all the required fileds. Please enter all the required text.';
+  displayMessage();
 };
 
 const indexPagesSuccess = (pages) => {
@@ -25,13 +31,13 @@ const showPageSuccess = (page) => {
   $('.content-display').html(showPageTemplate(page));
 };
 
-const success = (data) => {
-  console.log("SUCCESS!", data);
+const success = () => {
   clearForm();
 };
 
-const failure = (data) => {
-  console.log("OOPS!", data);
+const failure = () => {
+  document.getElementById("message").innerHTML = 'Please try again.';
+  displayMessage();
 };
 
 
