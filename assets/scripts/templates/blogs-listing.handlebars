@@ -1,11 +1,15 @@
 <h2> Blog Posts </h2>
-<h5>By: {{_owner.email}}</h3>
-<h5>Date: {{updatedAt}}</h5>
 {{#blogs}}
   <h4>
     {{title}}
   </h4>
-  {{content}}
+  <div class="blog-content">
+    {{{content}}}
+  </div>
+
+  <h5 class="blog-date">Date: {{updatedAt}}</h5>
+
+  <h5>{{author}}</h3>
 
   <!-- Update Blog -->
   <div id="edit-form">
