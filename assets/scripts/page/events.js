@@ -21,7 +21,6 @@ const onIndexPages = function (event) {
 };
 
 const onShowPage = function (event) {
-  console.log("clicked!");
   event.preventDefault();
   let data = getFormFields(event.target);
   api.showPage(data)
