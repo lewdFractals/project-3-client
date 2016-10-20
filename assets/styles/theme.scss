@@ -35,6 +35,15 @@ h4 {
   color: $smog;
 }
 
+.edit-page-option {
+  clear: both;
+}
+
+.delete-page-option button {
+  margin-bottom: 50px;
+  margin-left: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -84,6 +93,11 @@ nav {
 //   left: 0;
 //   height: $bar-height;
 // }
+
+.landing-text {
+  margin-left: 0;
+  font-size: 18px;
+}
 
 nav a,
 button {

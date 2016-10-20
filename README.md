@@ -6,7 +6,8 @@ Build an app to build a website! Your app must allow non-technical users to writ
 Live application:
 https://lewdfractals.github.io/project-3-client
 
-Back-end repository: https://github.com/laurenallegra/project-two-rails-api
+Back-end repository:
+https://fierce-plateau-45746.herokuapp.com
 
 ## About
 

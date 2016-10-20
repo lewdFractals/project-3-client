@@ -79,6 +79,7 @@ const logOutSuccess = () => {
   $('#sign-up').hide();
   $('#public-index-blogs').show();
   $('.public-display').show();
+  $('.content-display').html('');
 };
 
 
