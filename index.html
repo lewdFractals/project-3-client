@@ -11,7 +11,7 @@
         });
         </script>
     </head>
-    <body class="container-fluid">
+    <body>
 
       <div class="nav-wrapper">
         <nav>
@@ -41,13 +41,13 @@
         </div>
       </div>
 
-      <h1>TypeWriter</h1>
-      <h4>Write your own story.</h4>
+      <h1>T y p e W r i t e r</h1>
+      <h3>Write your own story.</h3>
       <div id="message" class="messages"></div>
 
       <!-- Public Blog Index -->
       <form id="public-index-blogs">
-        <span>Dont have an account?</span>
+        <h5>Don't have an account? That's ok! Check out what other users have been blogging about...</h5>
         <button type="submit" name="submit" class="btn btn-default">View Some Blog Posts</button>
       </form>
       <br>
@@ -92,45 +92,19 @@
         <div class="blog">
           <!-- Create Blog modal button-->
           <button type="button" class="btn btn-default" data-toggle="modal" data-target="#create-blog-modal">
-            Create blog post
+            Create Blog Post
           </button>
 
           <!-- Index Blogs -->
           <form id="index-blogs">
              <button type="submit" name="submit" class="btn btn-default">Show My Blog</button>
           </form>
-
-          <!-- Show Blog -->
-          <!-- <form id="show-blog">
-            <input type="text" name="blog[_id]" placeholder="Blog ID">
-            <button type="submit" name="submit" class="btn btn-default">Show Blog Post</button>
-          </form> -->
-
-          <!-- Edit Blog -->
-          <!-- <form id="edit-blog">
-            <fieldset>
-              <input type="text" name="blog[_id]" placeholder="Blog ID">
-              <div class="form-group">
-                <input type="text" class="form-control" name="blog[title]" placeholder="Edit Blog Post Title">
-              </div>
-              <div class="form-group">
-                <textarea class="form-control text-editor" name="blog[content]" placeholder="Edit Your Blog Post" rows="10" cols=75> </textarea>
-              </div>
-              <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
-            </fieldset>
-          </form> -->
-
-          <!-- Delete Blog -->
-          <!-- <form id="delete-blog">
-            <input type="text" name="blog[_id]" placeholder="Blog ID">
-            <button type="submit" name="submit" class="btn btn-default">Delete Blog Post</button>
-          </form> -->
         </div>
 
         <div class="page">
           <!-- Create Page -->
           <button type="button" class="btn btn-default" data-toggle="modal" data-target="#create-page-modal">
-            Create new page
+            Create New Page
           </button>
 
           <!-- Index Pages -->
@@ -138,31 +112,6 @@
               <button type="submit" name="submit" class="btn btn-default">Show My Pages</button>
            </form>
 
-          <!-- Show Page -->
-          <!-- <form id="show-page">
-             <input type="text" name="page[_id]" placeholder="Page ID">
-             <button type="submit" name="submit" class="btn btn-default">Show Page</button>
-           </form> -->
-
-          <!-- Edit Page -->
-          <!-- <form id="edit-page">
-             <fieldset>
-               <input type="text" name="page[_id]" placeholder="Page ID">
-               <div class="form-group">
-                 <input type="text" class="form-control" name="page[header]" placeholder="Page Header">
-               </div>
-               <div class="form-group">
-                 <textarea class="form-control text-editor" name="page[content]" placeholder="Page Content" rows="10" cols=75> </textarea>
-               </div>
-               <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
-             </fieldset>
-           </form> -->
-
-         <!-- Delete Page -->
-         <!-- <form id="delete-page">
-           <input type="text" name="page[_id]" placeholder="Page ID">
-           <button type="submit" name="submit" class="btn btn-default">Delete Page</button>
-         </form> -->
        </div>
 
          <!-- Display Content -->
@@ -189,7 +138,7 @@
                   <div class="form-group">
                     <textarea class="form-control text-editor" id="blog-entry" name="blog[content]" rows="10" cols="75"> </textarea>
                   </div>
-                  <button type="submit" class="btn btn-primary pull-right" name="submit">Create page</button>
+                  <button type="submit" class="btn btn-primary modal-btn pull-right" name="submit">Create blog post!</button>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </fieldset>
               </form>
@@ -216,7 +165,7 @@
                  <div class="form-group">
                    <textarea class="form-control text-editor" name="page[content]" rows="10" cols="75"> </textarea>
                  </div>
-                 <button type="submit" class="btn btn-primary pull-right" name="submit">Create page</button>
+                 <button type="submit" class="btn btn-primary modal-btn pull-right" name="submit">Create page!</button>
                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                </fieldset>
              </form>
