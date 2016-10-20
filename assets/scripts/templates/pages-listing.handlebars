@@ -7,13 +7,17 @@
     {{{content}}}
   </p>
 
+  <div class="page-options">
   <!-- Show Page -->
+  <div class="show-page-option">
   <form id="show-page">
      <input type="hidden" name="page[_id]" value="{{_id}}">
-     <button type="submit" name="submit" class="btn btn-default">Show Page</button>
+     <button type="submit" name="submit" class="btn btn-default pull-right">Show This Page</button>
    </form>
+ </div>
 
   <!-- Edit Page -->
+  <div class="edit-page-option">
   <form id="edit-page">
      <fieldset>
        <input type="hidden" name="page[_id]" value="{{_id}}">
@@ -23,13 +27,17 @@
        <div class="form-group">
          <textarea class="form-control text-editor" name="page[content]" placeholder="Page Content" rows="10" cols=75> </textarea>
        </div>
-       <button type="submit" class="btn btn-primary pull-right" name="submit">Submit Edit</button>
+       <button type="submit" class="btn btn-default pull-right" name="submit">Submit Edit</button>
      </fieldset>
    </form>
+ </div>
 
  <!-- Delete Page -->
+ <div class="delete-page-option">
  <form id="delete-page">
    <input type="hidden" name="page[_id]" value="{{_id}}">
-   <button type="submit" name="submit" class="btn btn-default">Delete Page</button>
+   <button type="submit" name="submit" class="btn btn-default pull-right">Delete Page</button>
  </form>
+ </div>
+ </div>
 {{/pages}}

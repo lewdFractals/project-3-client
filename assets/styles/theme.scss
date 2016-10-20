@@ -1,7 +1,9 @@
+@import 'typography';
+
 $unit: 75px;
 $min-width: 300px;
 $bar-height: 30px;
-// $link-padding: ($bar-height - $font-size) / 2;
+$link-padding: ($bar-height - $font-size) / 2;
 $form-element-height: 40px;
 
 
@@ -13,7 +15,7 @@ html {
 
 body {
   background: $slate;
-  color: $latte;
+  color: $smog;
   height: 100%;
   margin: 0;
   min-width: $min-width;
@@ -21,10 +23,61 @@ body {
   position: relative;
 }
 
+h4 {
+  color: $slate;
+}
+
+.content-display h4 {
+  color: $smog;
+}
+
+.public-display h4 {
+  color: $smog;
+}
+
+.edit-page-option {
+  clear: both;
+}
+
+.delete-page-option button {
+  margin-bottom: 50px;
+  margin-left: 100%;
+}
+
+h1,
+h2,
+h3,
+h5,
+p,
+#public-index-blogs,
+.public-display,
+.auth-forms,
+.container {
+  margin-left: 5%;
+}
+
+.auth-forms input {
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.pwd-form input {
+  margin-bottom: 10px;
+}
+
 .nav-wrapper {
   min-height: 30%;
   padding: $bar-height 0;
   position: relative;
+}
+
+.modal-btn {
+  background: $waterway;
+  border: 0;
+}
+
+.pull-right {
+  float: both;
 }
 
 nav {
@@ -41,21 +94,28 @@ nav {
 //   height: $bar-height;
 // }
 
+.landing-text {
+  margin-left: 0;
+  font-size: 18px;
+}
+
 nav a,
 button {
   color: $white;
-  // padding: $link-padding;
+  padding: $link-padding;
 }
 
 .btn-default {
   align-self: left;
-  background: $latte;
+  background: $blue-green;
+  color: $ceramic;
   display: block;
+  font-family: $button-font;
   margin: 5px;
   text-decoration: none;
 
   &:hover {
-    background-color: $coffee;
+    background-color: $waterway;
     color: $white;
     text-decoration: none;
     }
@@ -66,13 +126,13 @@ nav {
   top: 0;
 
   a {
-    background: $latte;
+    background: $waterway;
     display: block;
     float: right;
     text-decoration: none;
 
     &:hover {
-      background-color: $coffee;
+      background-color: $waterway;
       color: $white;
       text-decoration: none;
     }
@@ -84,11 +144,12 @@ nav {
     }
 
     &.log-out,
-    &.log-in-link {
-      background-color: $ceramic;
+    &.log-in-link,
+    &.sign-up-link {
+      background-color: $blue-green;
 
       &:hover {
-        background-color: $coffee;
+        background-color: $waterway;
       }
     }
   }
@@ -110,12 +171,15 @@ form {
 }
 
 input {
-  // @include border-radius(0);
-  background-color: $white;
+  border-radius: 4px;
+  // background-color: $white;
   border: 1px solid $white;
   box-shadow: none;
-  // font-size: $input-font-size;
-  // height: $form-element-height;
+  color: $black;
+  font-size: 1.2em;
+  height: $form-element-height;
+  // margin: 20px;
+  width: 200px;
 }
 
 label {
@@ -123,7 +187,7 @@ label {
 }
 
 button {
-  background-color: $latte;
+  // background-color: $latte;
   border: 0;
   box-shadow: none;
   height: $form-element-height;
@@ -131,26 +195,25 @@ button {
 }
 
 #log-in button {
-  background: $latte;
+  background: $blue-green;
+  color: $ceramic;
 
   &:hover {
-    background: $coffee;
+    background: $waterway;
   }
 }
 
 #sign-up button,
-#change-password button,
- {
-  background: $latte;
-
+#change-password button {
+  background: $blue-green;
   &:hover {
-    background: $coffee;
+    background: $waterway;
   }
 }
 
 
 .pwd-form {
-  background: $light-latte;
+  background: $waterway;
   padding: 15px;
 
   > div {
