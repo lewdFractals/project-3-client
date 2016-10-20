@@ -1,55 +1,178 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Project Three Placeholder Name</title>
+      <title>TypeWriter</title>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
+        <script>
+        tinymce.init({
+          selector: '.text-editor'
+        });
+        </script>
     </head>
-    <body class="container-fluid">
-      <h1>Project 3</h1>
-      <div id="message"></div>
-      <!-- Sign Up -->
-      <form id="sign-up">
-        <fieldset>
-          <div class="form-group">
-            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+    <body>
+
+      <div class="nav-wrapper">
+        <nav>
+          <div class="auth-nav">
+            <a class="log-in-link" role="button" href="#">Log In</a>
+            <a class="sign-up-link" role="button" href="#">Sign Up</a>
           </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+
+          <div class="user-nav">
+            <a class="log-out" role="button" href="#">Log Out</a>
+            <a class="change-password-link" role="button" href="#">Account</a>
           </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirm">
-          </div>
-          <button type="submit" class="btn btn-primary pull-right" name="submit">Sign Up</button>
-        </fieldset>
+        </nav>
+
+        <div class="pwd-form">
+          <form id="change-password" class="change-password">
+            <div>
+              <label for="passwords[old]">Current password</label>
+              <input name="passwords[old]" id="passwords[old]" type="password" placeholder="Current password">
+            </div>
+            <div>
+              <label for="passwords[new]">New password</label>
+              <input name="passwords[new]" id="passwords[new]" type="password" placeholder="New password">
+            </div>
+            <button class="btn btn-default" type="submit">Change Password</button>
+          </form>
+        </div>
+      </div>
+
+      <h1>T y p e W r i t e r</h1>
+      <h3>Write your own story.</h3>
+      <div id="message" class="messages"></div>
+
+      <!-- Public Blog Index -->
+      <form id="public-index-blogs">
+        <h5 class="landing-text">Don't have an account? That's ok! Check out what other users have been blogging about...</h5>
+        <button type="submit" name="submit" class="btn btn-default">View Some Blog Posts</button>
       </form>
-      <!-- Sign In -->
-      <form class="form-inline" id="sign-in">
-        <fieldset>
-          <div class="form-group">
-            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+      <br>
+
+      <div class="auth-forms">
+        <form id="sign-up" class="sign-up">
+          <div>
+            <label for="credentials[email]">Email</label>
+            <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
           </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+
+          <div>
+            <label for="credentials[password]">Password</label>
+            <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
           </div>
-          <button type="submit" class="btn btn-primary" name="submit">Log in</button>
-        </fieldset>
-      </form>
-      <!-- Change Password -->
-      <form id="change-password">
-        <fieldset>
-          <div class="form-group">
-            <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+
+          <div>
+            <label for="credentials[password_confirmation]">Confirm password</label>
+            <input name="credentials[password_confirmation]" id="credentials[password_confirmation]" type="password" placeholder="Confirm password" required>
           </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+
+          <button class="btn btn-default" type="submit">Sign Up</button>
+        </form>
+
+        <form id="log-in" class="log-in">
+          <div>
+            <label for="credentials[email]">Email</label>
+            <input name="credentials[email]" id="credentials[email]" type="email" placeholder="Email" required>
           </div>
-          <button type="submit" class="btn btn-primary pull-right" name="submit">Change Password</button>
-        </fieldset>
-      </form>
-      <!-- Log Off -->
-      <form id="sign-out">
-        <button type="submit"  name="submit">Sign out</button>
-      </form>
+          <div>
+            <label for="credentials[password]">Password</label>
+            <input name="credentials[password]" id="credentials[password]" type="password" placeholder="Password" required>
+          </div>
+          <button class="btn btn-default" type="submit">Log In</button>
+        </form>
+      </div>
+
+      <!-- Display Public Blog Index -->
+      <div class="public-display"></div>
+
+      <div class="container blogs-and-pages">
+        <div class="blog">
+          <!-- Create Blog modal button-->
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#create-blog-modal">
+            Create Blog Post
+          </button>
+
+          <!-- Index Blogs -->
+          <form id="index-blogs">
+             <button type="submit" name="submit" class="btn btn-default">Show My Blog</button>
+          </form>
+        </div>
+
+        <div class="page">
+          <!-- Create Page -->
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#create-page-modal">
+            Create New Page
+          </button>
+
+          <!-- Index Pages -->
+          <form id="index-pages">
+              <button type="submit" name="submit" class="btn btn-default">Show My Pages</button>
+           </form>
+
+       </div>
+
+         <!-- Display Content -->
+         <div class="content-display"></div>
+       </div>
+
+       <!-- Create Blog post modal -->
+      <div class="modal fade" id="create-blog-modal" tabindex="-1" role="dialog" aria-labelledby="create-blog-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="create-blog-modal-header">Create blog post</h4>
+            </div>
+            <div class="modal-body">
+              <!-- Create Blog post modal body-->
+              <form id="create-blog">
+                <fieldset>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="blog[author]" placeholder="author: required">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="blog[title]" placeholder="title: required">
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control text-editor" id="blog-entry" name="blog[content]" rows="10" cols="75"> </textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary modal-btn pull-right" name="submit">Create blog post!</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </fieldset>
+              </form>
+             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Create new page modal -->
+      <div class="modal fade" id="create-page-modal" tabindex="-1" role="dialog" aria-labelledby="create-page-modal" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+               <span aria-hidden="true">&times;</span>
+             <h4 class="modal-title" id="create-page-modal-header">page content</h4>
+           </div>
+           <div class="modal-body">
+             <!-- Create new page modal body-->
+             <form id="create-page">
+               <fieldset>
+                 <div class="form-group">
+                   <input type="text" class="form-control" name="page[header]" placeholder="title: required">
+                 </div>
+                 <div class="form-group">
+                   <textarea class="form-control text-editor" name="page[content]" rows="10" cols="75"> </textarea>
+                 </div>
+                 <button type="submit" class="btn btn-primary modal-btn pull-right" name="submit">Create page!</button>
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </fieldset>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
     </body>
 </html>

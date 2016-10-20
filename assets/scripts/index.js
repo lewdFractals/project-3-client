@@ -7,8 +7,12 @@
 require('./example');
 
 const authEvents = require('./auth/events.js');
+const blogEvents = require('./blog/events.js');
+const pageEvents = require('./page/events.js');
 
 // On document ready
 $(() => {
   authEvents.addHandlers();
+  blogEvents.addHandlers();
+  pageEvents.addHandlers();
 });

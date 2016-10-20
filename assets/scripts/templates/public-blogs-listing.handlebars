@@ -1,0 +1,14 @@
+<h2> Blog Posts </h2>
+{{#blogs}}
+  <h4>
+    {{title}}
+  </h4>
+
+  <div class="blog-content">
+    {{{content}}}
+  </div>
+
+  <h5 class="blog-date">Date: {{updatedAt}}</h5>
+
+  <h5>By: {{author}}</h5>
+{{/blogs}}

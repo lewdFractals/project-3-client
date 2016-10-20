@@ -1,0 +1,223 @@
+@import 'typography';
+
+$unit: 75px;
+$min-width: 300px;
+$bar-height: 30px;
+$link-padding: ($bar-height - $font-size) / 2;
+$form-element-height: 40px;
+
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $slate;
+  color: $smog;
+  height: 100%;
+  margin: 0;
+  min-width: $min-width;
+  padding: 0;
+  position: relative;
+}
+
+h4 {
+  color: $slate;
+}
+
+.content-display h4 {
+  color: $smog;
+}
+
+.public-display h4 {
+  color: $smog;
+}
+
+.edit-page-option {
+  clear: both;
+}
+
+.delete-page-option button {
+  margin-bottom: 50px;
+  margin-left: 100%;
+}
+
+h1,
+h2,
+h3,
+h5,
+p,
+#public-index-blogs,
+.public-display,
+.auth-forms,
+.container {
+  margin-left: 5%;
+}
+
+.auth-forms input {
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.pwd-form input {
+  margin-bottom: 10px;
+}
+
+.nav-wrapper {
+  min-height: 30%;
+  padding: $bar-height 0;
+  position: relative;
+}
+
+.modal-btn {
+  background: $waterway;
+  border: 0;
+}
+
+.pull-right {
+  float: both;
+}
+
+nav {
+  min-width: $min-width;
+  position: absolute;
+  width: 100%;
+}
+
+// footer {
+//   // @extend .text-center;
+//   background: $coffee;
+//   bottom: 0;
+//   left: 0;
+//   height: $bar-height;
+// }
+
+.landing-text {
+  margin-left: 0;
+  font-size: 18px;
+}
+
+nav a,
+button {
+  color: $white;
+  padding: $link-padding;
+}
+
+.btn-default {
+  align-self: left;
+  background: $blue-green;
+  color: $ceramic;
+  display: block;
+  font-family: $button-font;
+  margin: 5px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $waterway;
+    color: $white;
+    text-decoration: none;
+    }
+}
+
+nav {
+  background: $ceramic;
+  top: 0;
+
+  a {
+    background: $waterway;
+    display: block;
+    float: right;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $waterway;
+      color: $white;
+      text-decoration: none;
+    }
+
+    &:focus,
+    &:active {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &.log-out,
+    &.log-in-link,
+    &.sign-up-link {
+      background-color: $blue-green;
+
+      &:hover {
+        background-color: $waterway;
+      }
+    }
+  }
+}
+
+.messages {
+  @extend .text-center;
+  height: 30px;
+
+  div {
+    height: 30px;
+    padding: 8px 15px;
+  }
+}
+
+form {
+  margin: 0 auto;
+  width: auto;
+}
+
+input {
+  border-radius: 4px;
+  // background-color: $white;
+  border: 1px solid $white;
+  box-shadow: none;
+  color: $black;
+  font-size: 1.2em;
+  height: $form-element-height;
+  // margin: 20px;
+  width: 200px;
+}
+
+label {
+  display: none;
+}
+
+button {
+  // background-color: $latte;
+  border: 0;
+  box-shadow: none;
+  height: $form-element-height;
+  width: 200px;
+}
+
+#log-in button {
+  background: $blue-green;
+  color: $ceramic;
+
+  &:hover {
+    background: $waterway;
+  }
+}
+
+#sign-up button,
+#change-password button {
+  background: $blue-green;
+  &:hover {
+    background: $waterway;
+  }
+}
+
+
+.pwd-form {
+  background: $waterway;
+  padding: 15px;
+
+  > div {
+    margin: 0 auto 10px;
+    max-width: 300px;
+  }
+}

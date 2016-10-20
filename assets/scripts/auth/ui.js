@@ -2,38 +2,96 @@
 
 const app = require('../app');
 
-const signUpSuccess = (data) => {
-  console.log(data);
+const displayMessage = () => {
+  $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
 };
-const signInSuccess = (data) => {
-  console.log(data);
-  app.user = data.user;
-};
-const signFailure = (error) => {
-  document.getElementById("message").innerHTML = 'Sorry! Please try again';
-  $('#message').fadeIn('fast').delay(5000).fadeOut('fast');
-  console.log(error);
-};
-const signOutSuccess = (data) => {
-  console.log(data);
-  app.user = null;
-};
-const changePasswordSuccess = (data) => {
-  document.getElementById("message").innerHTML = 'Password successfully changed';
-  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
-  console.log(data);
-};
-const failure = (error) => {
-  document.getElementById("message").innerHTML = 'Error: ' + error.statusText;
-  $('#message').fadeIn('fast').delay(4000).fadeOut('fast');
-    console.log(error);
 
+const hideContainer = () => {
+  $('.container').hide();
 };
+
+const showContainer = () => {
+  $('.container').show();
+};
+
+$(window).load(function(){
+  hideContainer();
+});
+
+const clearForm = () => {
+  $('input').val('');
+};
+
+const toggleAuth = () => {
+  $('.auth-nav').toggle();
+  $('.auth-forms').toggle();
+  $('.user-nav').toggle();
+};
+
+const toggleAuthOptions = () => {
+  $('.sign-up-link').toggleClass('hidden');
+  $('.log-in-link').toggleClass('block');
+  $('#log-in').toggle('fast');
+  $('#sign-up').toggle('fast');
+};
+
+const toggleChangePassword = () => {
+  $('.pwd-form').slideToggle();
+};
+
+const success = (data) => {
+  console.log(data);
+};
+
+const failure = (error) => {
+  console.error(error);
+};
+
+const passwordChangeSuccess = () => {
+  document.getElementById("message").innerHTML = 'Password successfully changed!';
+  displayMessage();
+  toggleChangePassword();
+};
+
+const logInSuccess = (data) => {
+  app.user = data.user;
+  toggleAuth();
+  showContainer();
+  $('#public-index-blogs').hide();
+  $('.public-display').empty().hide();
+  clearForm();
+};
+
+const logOutSuccess = () => {
+  app.user = null;
+  toggleAuth();
+  hideContainer();
+  $('.pwd-form').hide();
+  $('.sign-up-link').removeClass('hidden');
+  $('.log-in-link').removeClass('hidden');
+  $('#log-in').show();
+  $('#sign-up').hide();
+  $('#public-index-blogs').show();
+  $('.public-display').show();
+  $('.content-display').html('');
+};
+
+const logInFailure = () => {
+  document.getElementById("message").innerHTML = 'Password or e-mail is incorrect. Please try again.';
+  displayMessage();
+};
+
 module.exports = {
+  clearForm,
+  toggleAuth,
+  toggleAuthOptions,
+  toggleChangePassword,
+  passwordChangeSuccess,
+  logInSuccess,
+  logInFailure,
+  logOutSuccess,
   failure,
-  signUpSuccess,
-  signInSuccess,
-  changePasswordSuccess,
-  signOutSuccess,
-  signFailure
+  success,
+  hideContainer,
+  showContainer
 };
