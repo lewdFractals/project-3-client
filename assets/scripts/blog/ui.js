@@ -7,6 +7,10 @@ const clearForm = () => {
   $('input').val('');
 };
 
+const clearTinyMCE = () => {
+  tinyMCE.activeEditor.setContent('');
+};
+
 const displayMessage = () => {
   $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
 };
@@ -16,6 +20,7 @@ const createBlogSuccess = () => {
   displayMessage();
   $('#create-blog-modal').modal('hide');
   clearForm();
+  clearTinyMCE();
 };
 
 const createBlogFail = () => {
@@ -25,12 +30,10 @@ const createBlogFail = () => {
 
 const publicIndexBlogsSuccess = (blogs) => {
   $('.public-display').html(publicIndexBlogsTemplate(blogs));
-  console.log(blogs);
 };
 
 const indexBlogsSuccess = (blogs) => {
   $('.content-display').html(indexBlogsTemplate(blogs));
-  console.log(blogs);
 };
 
 const success = () => {

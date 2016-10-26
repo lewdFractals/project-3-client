@@ -39,8 +39,8 @@ const toggleChangePassword = () => {
   $('.pwd-form').slideToggle();
 };
 
-const success = (data) => {
-  console.log(data);
+const success = () => {
+  
 };
 
 const failure = (error) => {

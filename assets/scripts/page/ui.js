@@ -7,6 +7,10 @@ const clearForm = () => {
   $('input').val('');
 };
 
+const clearTinyMCE = () => {
+  tinyMCE.activeEditor.setContent('');
+};
+
 const displayMessage = () => {
   $('#message').fadeIn('fast').delay(3000).fadeOut('fast');
 };
@@ -16,6 +20,7 @@ const createPageSuccess = () => {
   displayMessage();
   $('#create-page-modal').modal('hide');
   clearForm();
+  clearTinyMCE();
 };
 
 const createPageFail = () => {
