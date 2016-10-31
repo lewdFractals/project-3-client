@@ -7,7 +7,7 @@ Live application:
 https://lewdfractals.github.io/project-3-client
 
 Back-end repository:
-https://fierce-plateau-45746.herokuapp.com
+https://github.com/lewdFractals/project-3-api
 
 ## About
 
