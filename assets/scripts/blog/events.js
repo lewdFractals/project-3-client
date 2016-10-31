@@ -58,6 +58,11 @@ const onDeleteBlog = function (event) {
     .fail(ui.failure);
 };
 
+const onToggleBlogOptions = function (event) {
+  event.preventDefault();
+  let id = $(event.target).attr("data-blog-id");
+  $( '#' + id ).slideToggle("slow");
+};
 
 const addHandlers = () => {
   $('#public-index-blogs').on('submit', onPublicIndexBlogs);
@@ -66,6 +71,7 @@ const addHandlers = () => {
   $('#show-blog').on('submit', onShowBlog);
   // $('#edit-blog').on('submit', onEditBlog);
   // $('#delete-blog').on('submit', onDeleteBlog);
+  $('.content-display').on('click','#blog-options-button', onToggleBlogOptions);
 
   $('.content-display').on('submit','#edit-blog', onEditBlog);
   $('.content-display').on('submit','#delete-blog', onDeleteBlog);

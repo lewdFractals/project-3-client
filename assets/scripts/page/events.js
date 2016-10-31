@@ -50,6 +50,11 @@ const onDeletePage = function (event) {
     .fail(ui.failure);
 };
 
+const onTogglePageOptions = function (event) {
+  event.preventDefault();
+  let id = $(event.target).attr("data-page-id");
+  $( '#' + id ).slideToggle("slow");
+};
 
 const addHandlers = () => {
   $('#create-page').on('submit', onCreatePage);
@@ -57,6 +62,8 @@ const addHandlers = () => {
   // $('#show-page').on('submit', onShowPage);
   // $('#edit-page').on('submit', onEditPage);
   // $('#delete-page').on('submit', onDeletePage);
+
+  $('.content-display').on('click','#page-options-button', onTogglePageOptions);
 
   $('.content-display').on('submit','#show-page', onShowPage);
   $('.content-display').on('submit','#edit-page', onEditPage);
