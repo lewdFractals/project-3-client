@@ -1,13 +1,15 @@
 <h2> Pages </h2>
 {{#pages}}
-  <h4>
+  <h4 class="border-top">
     {{header}}
   </h4>
   <p>
     {{{content}}}
   </p>
 
-  <div class="page-options">
+  <button type="button" class="btn-xs options-button" id="page-options-button" data-page-id={{_id}}>Options</button>
+
+  <div class="page-options" id={{_id}}>
   <!-- Show Page -->
   <div class="show-page-option">
   <form id="show-page">
